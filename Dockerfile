@@ -9,6 +9,8 @@ RUN mvn clean install
 
 FROM openjdk:17-jdk-slim
 
+RUN mkdir data
+
 EXPOSE 8081
 
 COPY --from=build /target/demossr-0.0.1-SNAPSHOT.war app.war
