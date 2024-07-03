@@ -13,4 +13,4 @@ EXPOSE 8081
 
 COPY --from=build /target/demossr-0.0.1-SNAPSHOT.war app.war
 
-ENTRYPOINT [ "java", "-jar", "app.jar" ]
+ENTRYPOINT [ "java", "-jar", "app.war" ]
