@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>:: Controle de Tarefa ::</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  </head>
+  <body>
+    <div th:replace="~{ comuns :: navbar}"></div>
+
+    <div class="w3-container">
+      <div class="w3-card-4">
+        <div class="w3-container w3-green">
+          <h2>Cadastro de tarefa</h2>
+        </div>
+
+        <form class="w3-container" th:action="@{/tarefa/add}" method="post">
+          <label>Título</label>
+          <input class="w3-input" type="text" name="titulo" />
+
+          <label>Data</label>
+          <input class="w3-input" type="date" name="data" />
+
+          <label>Descrição</label>
+          <textarea
+            class="w3-input"
+            type="text"
+            name="descricao"
+            rows="5"
+          ></textarea>
+
+          <input class="w3-button w3-black" type="submit" value="Salvar" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

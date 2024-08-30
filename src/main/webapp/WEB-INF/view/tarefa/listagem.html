@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>:: Controle de Tarefa ::</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div th:replace="~{ comuns :: navbar}"></div>
+
+    <div class="w3-container">
+      <div class="w3-card-4">
+        <div class="w3-container w3-green">
+          <h2>Lista de tarefas</h2>
+        </div>
+
+        <div class="w3-container">
+          <table class="w3-table">
+            <tr>
+              <th style="width: 15%">Data</th>
+              <th style="width: 25%">Título</th>
+              <th style="width: 40%">Descrição</th>
+              <th></th>
+            </tr>
+            <tr th:each=" t : ${listaTarefas}">
+              <td th:text="${t.data}"></td>
+              <td th:text="${t.titulo}"></td>
+              <td th:text="${t.descricao}"></td>
+              <td>
+                <div class="w3-bar">
+                  <a class="w3-bar-item w3-button w3-teal" th:href="@{/tarefa/edit/{id}(id=${t.id})}">
+                    <i class="fa fa-edit"></i>
+                  </a>
+                  <a class="w3-bar-item w3-button w3-red" th:href="@{'/tarefa/delete/' + ${t.id}}">
+                    <i class="fa fa-trash"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

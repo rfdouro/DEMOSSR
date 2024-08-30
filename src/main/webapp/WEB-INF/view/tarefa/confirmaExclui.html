@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>:: Controle de Tarefa ::</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  </head>
+  <body>
+    <div th:replace="~{ comuns :: navbar}"></div>
+
+    <div class="w3-container">
+      <div class="w3-card-4">
+        <div class="w3-container w3-green">
+          <h2>Exclusão de tarefa</h2>
+        </div>
+
+        <form class="w3-container" th:action="@{/tarefa/delete}" method="post">
+          <input type="hidden" th:value="${tarefa.id}" name="id"/>
+
+          <label>Título</label>
+          <input
+            class="w3-input"
+            type="text"
+            name="titulo"
+            th:value="${tarefa.titulo}"
+            disabled
+          />
+
+          <label>Data</label>
+          <input
+            class="w3-input"
+            type="date"
+            name="data"
+            th:value="${tarefa.data}"
+            disabled
+          />
+
+          <label>Descrição</label>
+          <textarea
+            class="w3-input"
+            type="text"
+            name="descricao"
+            rows="5"
+            th:text="${tarefa.descricao}"
+            disabled
+          ></textarea>
+
+          <input
+            class="w3-button w3-red"
+            type="submit"
+            value="Confirma excluir?"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
