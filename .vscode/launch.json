@@ -10,7 +10,7 @@
       "args": "",
       //"envFile": "${workspaceFolder}/.env",
       "env": {
-        "SPRING_PROFILES_ACTIVE": "DEV"
+        "SPRING_PROFILES_ACTIVE": "DEVSQLITE"
       }
     }
   ]
