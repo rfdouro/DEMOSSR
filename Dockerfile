@@ -13,6 +13,10 @@ RUN mkdir data
 
 EXPOSE 8081
 
+ENV SUPABASE_USER=${SUPABASE_USER}
+ENV SUPABASE_PASSWORD=${SUPABASE_PASSWORD}
+ENV DATASOURCE_URL=${DATASOURCE_URL}
+
 COPY --from=build /target/demossr.war app.war
 
 ENTRYPOINT [ "java", "-jar", "app.war" ]
