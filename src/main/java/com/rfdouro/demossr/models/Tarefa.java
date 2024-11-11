@@ -13,7 +13,7 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name = "tarefa", indexes = {
+@Table(name = "tbdemotarefa", indexes = {
   @Index(columnList = "titulo,dt_tarefa", unique = true)
 })
 public class Tarefa {
