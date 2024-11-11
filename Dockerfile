@@ -13,7 +13,10 @@ RUN mkdir data
 
 EXPOSE 8081
 
-DATASOURCE_URL='jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:6543/postgres'
+ENV DATASOURCE_URL=$DATASOURCE_URL
+ENV SUPABASE_PASSWORD=$SUPABASE_PASSWORD
+ENV SUPABASE_USER=$SUPABASE_USER
+
 
 COPY --from=build /target/demossr.war app.war
 
