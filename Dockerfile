@@ -13,6 +13,6 @@ RUN mkdir data
 
 EXPOSE 8081
 
-COPY --from=build /target/demossr-0.0.1-SNAPSHOT.war app.war
+COPY --from=build /target/demossr.war app.war
 
 ENTRYPOINT [ "java", "-jar", "app.war" ]
