@@ -20,4 +20,5 @@ ENV SUPABASE_USER=$SUPABASE_USER
 
 COPY --from=build /target/demossr.war app.war
 
-ENTRYPOINT [ "java", "-jar", "app.war" ]
+#ENTRYPOINT [ "java", "-jar", "app.war" ]
+ENTRYPOINT [ "sh", "-c", "java -Dspring.datasource.username=**${SUPABASE_USER}** -Dspring.datasource.password=**${SUPABASE_PASSWORD}** -Dspring.datasource.url=**${DATASOURCE_UR}** -jar app.war" ]
