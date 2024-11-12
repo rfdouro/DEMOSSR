@@ -20,6 +20,6 @@ ENV SUPABASE_USER=$SUPABASE_USER
 
 #COPY --from=build /target/demossr.war app.war
 
-ENTRYPOINT [ "echo", "$DATASOURCE_URL" ]
+ENTRYPOINT [ "sh", "-c", "echo $DATASOURCE_URL" ]
 #ENTRYPOINT [ "java", "-jar", "app.war" ]
 #ENTRYPOINT [ "sh", "-c", "java -DSUPABASE_USER=${SUPABASE_USER} -DSUPABASE_PASSWORD=${SUPABASE_PASSWORD} -DDATASOURCE_URL=${DATASOURCE_UR} -jar app.war" ]
