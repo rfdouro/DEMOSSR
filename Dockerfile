@@ -19,5 +19,5 @@ EXPOSE 8081
 
 COPY --from=build /target/demossr.war app.war
 
-ENTRYPOINT [ "sh", "-c", "echo $SUPABASE_DATASOURCE_URL" ]
-#ENTRYPOINT [ "java", "-jar", "app.war" ]
+#ENTRYPOINT [ "sh", "-c", "echo $SUPABASE_DATASOURCE_URL" ]
+ENTRYPOINT [ "java", "-jar", "app.war" ]
